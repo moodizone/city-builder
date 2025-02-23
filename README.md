@@ -1,36 +1,23 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Time Allocation Plan
 
-## Getting Started
+Here’s how I plan to allocate my time over the 7-day period to implement the most impactful features:
 
-First, run the development server:
+### **Day 1-2:**
+- Set up the project (Next.js, Tailwind CSS, React Query).
+- Implement core functionality (add/remove/duplicate houses, customize attributes).
+- Add basic weather display with icons.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### **Day 3:**
+- Implement **day/night cycle** and **smooth animations**.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### **Day 4:**
+- Add **interactive weather effects** (e.g., falling snow, raindrops).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### **Day 5:**
+- Implement **drag-and-drop functionality** (if time permits).
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### **Day 6:**
+- Add **save/load city layout** feature.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### **Day 7:**
+- Polish the UI, add **sound effects**, and test the application.
