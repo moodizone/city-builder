@@ -7,6 +7,7 @@ import { useParams } from "next/navigation";
 import styles from "./styles.module.scss";
 import { useHouse } from "@/hoc/houseProvider";
 import { HouseType } from "../house";
+import Button from "../button";
 
 function Sidebar() {
   const { list } = useHouse();
@@ -26,9 +27,10 @@ function Sidebar() {
             <li key={house.id}>
               <Link
                 href={`${house.id}`}
-                className={`group relative flex justify-between items-center p-2 rounded mb-2 ${
+                className={classNames(
+                  "flex justify-between items-center p-2 rounded mb-1",
                   isActive ? "bg-slate-700" : "hover:bg-slate-700"
-                }`}
+                )}
               >
                 <span className="truncate flex-1 mr-2">{house.name}</span>
               </Link>
@@ -36,7 +38,7 @@ function Sidebar() {
           );
         })}
       </ul>
-      <button>Add new</button>
+      <Button>{"New house"}</Button>
     </section>
   );
 }
