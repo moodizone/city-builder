@@ -13,6 +13,7 @@ interface ContextType {
   addHouse(payload: HouseType): void;
   removeHouse(id: HouseType["id"]): void;
   duplicateHouse(id: HouseType["id"]): void;
+  renameHouse(id: HouseType["id"], name: HouseType["name"]): void;
 }
 
 const initialState: ContextType = {
@@ -21,6 +22,9 @@ const initialState: ContextType = {
     return void 0;
   },
   removeHouse() {
+    return void 0;
+  },
+  renameHouse() {
     return void 0;
   },
   duplicateHouse() {
@@ -56,13 +60,34 @@ function HouseProvider({ children, list }: React.PropsWithChildren<PropsType>) {
     },
     [houses, addHouse]
   );
+  const renameHouse = React.useCallback(
+    (id: HouseType["id"], name: HouseType["name"]) => {
+      // use index search since I don't want to change the list order after update
+      const foundedIndex = houses.findIndex((house) => house.id === id);
+
+      if (foundedIndex !== -1) {
+        setHouses((prev) => {
+          const prevList = [...prev];
+          prevList[foundedIndex] = { ...prevList[foundedIndex], name };
+          return prevList;
+        });
+      }
+    },
+    [houses]
+  );
 
   //================================
   // Render
   //================================
   return (
     <HouseContext.Provider
-      value={{ list: houses, addHouse, removeHouse, duplicateHouse }}
+      value={{
+        list: houses,
+        addHouse,
+        removeHouse,
+        duplicateHouse,
+        renameHouse,
+      }}
     >
       {children}
     </HouseContext.Provider>
