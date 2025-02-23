@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
-import "./globals.scss";
+
+import Header from "@/components/header";
+import Sidebar from "@/components/sidebar";
+import Content from "@/components/content";
+import "./../styles/globals.scss";
 
 export const metadata: Metadata = {
   title: "City builder",
@@ -13,7 +17,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <section>
+          <Sidebar />
+        </section>
+        <section>
+          <Header />
+          <Content>{children}</Content>
+        </section>
+      </body>
     </html>
   );
 }
