@@ -12,7 +12,7 @@ function Button({
     <button
       {...others}
       className={`w-full p-3 text-center rounded transition-colors duration-200
-        bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 ${className}`}
+        bg-blue-800 text-white hover:bg-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-700 ${className}`}
     >
       {children}
     </button>
