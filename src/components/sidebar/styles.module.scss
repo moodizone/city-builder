@@ -1,0 +1,11 @@
+@import "../../styles/variables";
+
+.container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: $sidebar-width;
+  height: 100dvh;
+  overflow-y: auto;
+  background-color: #212121;
+}
