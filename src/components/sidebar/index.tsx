@@ -8,6 +8,7 @@ import styles from "./styles.module.scss";
 import { useHouse } from "@/hoc/houseProvider";
 import { HouseType } from "../house";
 import Button from "../button";
+import Item from "./item";
 
 function Sidebar() {
   const { list } = useHouse();
@@ -21,22 +22,9 @@ function Sidebar() {
         <h1 className="font-bold text-lg mb-3">{"City Builder"}</h1>
       </Link>
       <ul>
-        {list.map((house) => {
-          const isActive = house.id === id;
-          return (
-            <li key={house.id}>
-              <Link
-                href={`${house.id}`}
-                className={classNames(
-                  "flex justify-between items-center p-2 rounded mb-1",
-                  isActive ? "bg-slate-700" : "hover:bg-slate-700"
-                )}
-              >
-                <span className="truncate flex-1 mr-2">{house.name}</span>
-              </Link>
-            </li>
-          );
-        })}
+        {list.map((house) => (
+          <Item key={house.id} house={house} isActive={house.id === id} />
+        ))}
       </ul>
       <Button>{"New house"}</Button>
     </section>
