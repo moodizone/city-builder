@@ -1,0 +1,8 @@
+@import "./../../styles/variables";
+
+.container {
+  position: fixed;
+  left: $sidebar-width;
+  right: 0;
+  top: 0;
+}

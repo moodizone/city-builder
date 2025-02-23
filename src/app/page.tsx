@@ -1,3 +1,3 @@
 export default function Home() {
-  return <main>{"content goes here"}</main>;
+  return <div>{"content goes here"}</div>;
 }
