@@ -1,10 +1,11 @@
 import Link from "next/link";
 import House, { type HouseType } from "@/components/house";
+import { generateUniqueId, getRandomColor } from "@/utils/random";
 
 const houses: HouseType[] = [...new Array(10)].map((_, i) => ({
-  id: `${i}`,
+  id: generateUniqueId(),
   name: `House ${i}`,
-  floors: [`floor ${i}`],
+  floors: [getRandomColor()],
 }));
 
 export default function Home() {
