@@ -2,17 +2,14 @@
 import Link from "next/link";
 import * as React from "react";
 import classNames from "classnames";
-import { useParams } from "next/navigation";
 
 import styles from "./styles.module.scss";
 import { useHouse } from "@/hoc/houseProvider";
-import { HouseType } from "../house";
-import Button from "../button";
-import Item from "./item";
+import Button from "@/components/button";
+import Item from "@/components/sidebar/item";
 
 function Sidebar() {
   const { list } = useHouse();
-  const { id } = useParams<{ id: HouseType["id"] }>();
 
   return (
     <section
@@ -23,7 +20,7 @@ function Sidebar() {
       </Link>
       <ul>
         {list.map((house) => (
-          <Item key={house.id} house={house} isActive={house.id === id} />
+          <Item key={house.id} house={house} />
         ))}
       </ul>
       <Button>{"New house"}</Button>
