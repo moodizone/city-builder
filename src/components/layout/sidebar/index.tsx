@@ -4,6 +4,7 @@ import * as React from "react";
 import classNames from "classnames";
 
 import styles from "./styles.module.scss";
+import btnStyles from "@/components/form/button/styles.module.scss";
 import { useHouse } from "@/hoc/houseProvider";
 import Item from "@/components/layout/sidebar/item";
 
@@ -22,11 +23,7 @@ function Sidebar() {
           <Item key={house.id} house={house} />
         ))}
       </ul>
-      <Link
-        href={"/create"}
-        className="w-full p-3 text-center rounded transition-colors duration-200
-        bg-blue-800 text-white hover:bg-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-700 ${className}"
-      >
+      <Link href={"/create"} className={btnStyles.btn}>
         {"New house"}
       </Link>
     </section>
