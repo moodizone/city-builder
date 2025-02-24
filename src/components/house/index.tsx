@@ -21,8 +21,13 @@ function House({ floors }: HouseType) {
       <div className={styles.house}>
         {floors.map((floor, index) => {
           const isLastRow = index === floors.length - 1;
+          const backgroundColor = floor.color ?? "#edc181";
           return (
-            <div key={index} className="flex items-center justify-around p-3">
+            <div
+              key={index}
+              className="flex items-center justify-around p-3"
+              style={{ backgroundColor }}
+            >
               {isLastRow ? <Door /> : null}
               {[...new Array(floor.rooms)].map((_, i) => (
                 <Window key={i} />
