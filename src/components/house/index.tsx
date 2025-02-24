@@ -15,13 +15,17 @@ export interface HouseType {
   floors: FloorType[];
 }
 
-function House({ floors }: HouseType) {
+interface Props {
+  floors: HouseType["floors"];
+}
+
+function House({ floors }: Props) {
   return (
     <div className="p-4">
       <div className={styles.house}>
         {floors.map((floor, index) => {
           const isLastRow = index === floors.length - 1;
-          const backgroundColor = floor.color ?? "#edc181";
+          const backgroundColor = floor.color;
           return (
             <div
               key={index}

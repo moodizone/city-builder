@@ -13,7 +13,7 @@ export default function Home() {
           <li key={house.id} className="rounded shadow-sm">
             <Link href={`${house.id}`}>
               <Card title={house.name}>
-                <House {...house} />
+                <House floors={house.floors} />
               </Card>
             </Link>
           </li>
