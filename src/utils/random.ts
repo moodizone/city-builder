@@ -1,24 +1,24 @@
 const characters =
   "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-const colors = [
-  "#FFD1DC", // Pastel Pink
-  "#B2F2BB", // Pastel Green
-  "#A2DDF0", // Pastel Blue
-  "#FFE5B4", // Pastel Peach
-  "#D4A5A5", // Pastel Rose
-  "#C8A2C8", // Pastel Lilac
-  "#FFCC99", // Pastel Orange
-  "#B5EAD7", // Pastel Mint
-  "#F0E68C", // Pastel Yellow
-  "#E6E6FA", // Lavender
-  "#FFB6C1", // Light Pink
-  "#87CEEB", // Sky Blue
-  "#98FB98", // Pale Green
-  "#FFDAB9", // Peach Puff
-  "#AFEEEE", // Pale Turquoise
-  "#F5DEB3", // Wheat
-  "#DDA0DD", // Plum
-  "#FFA07A", // Light Salmon
+export const colors = [
+  { id: "#FFD1DC", name: "Pastel Pink" },
+  { id: "#B2F2BB", name: "Pastel Green" },
+  { id: "#A2DDF0", name: "Pastel Blue" },
+  { id: "#FFE5B4", name: "Pastel Peach" },
+  { id: "#D4A5A5", name: "Pastel Rose" },
+  { id: "#C8A2C8", name: "Pastel Lilac" },
+  { id: "#FFCC99", name: "Pastel Orange" },
+  { id: "#B5EAD7", name: "Pastel Mint" },
+  { id: "#F0E68C", name: "Pastel Yellow" },
+  { id: "#E6E6FA", name: "Lavender" },
+  { id: "#FFB6C1", name: "Light Pink" },
+  { id: "#87CEEB", name: "Sky Blue" },
+  { id: "#98FB98", name: "Pale Green" },
+  { id: "#FFDAB9", name: "Peach Puff" },
+  { id: "#AFEEEE", name: "Pale Turquoise" },
+  { id: "#F5DEB3", name: "Wheat" },
+  { id: "#DDA0DD", name: "Plum" },
+  { id: "#FFA07A", name: "Light Salmon" },
 ];
 
 export function generateUniqueId(): string {
@@ -34,5 +34,5 @@ export function generateUniqueId(): string {
 
 export function getRandomColor(): string {
   const randomIndex = Math.floor(Math.random() * colors.length);
-  return colors[randomIndex];
+  return colors[randomIndex].id;
 }
