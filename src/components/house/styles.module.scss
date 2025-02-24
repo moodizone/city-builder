@@ -1,0 +1,81 @@
+// reference: https://codepen.io/jackiezen/pen/bvqqOo
+$dark-frame-color: #666961;
+$light-frame-color: #93968c;
+$window-glasses: #b2c7e6;
+
+%common-styles {
+  content: "";
+  position: absolute;
+}
+
+.house {
+  background-color: #edc181;
+  position: relative;
+
+  &:before {
+    @extend %common-styles;
+    background-color: $dark-frame-color;
+    height: 12px;
+    width: calc(100% + 8px);
+    left: -4px;
+    top: 0px;
+  }
+}
+
+.window {
+  width: 32px;
+  height: 56px;
+  position: relative;
+  background-color: $window-glasses;
+  border: 6px solid $dark-frame-color;
+  margin: 12px;
+
+  &:before {
+    @extend %common-styles;
+    width: 20px;
+    height: 4px;
+    background-color: $dark-frame-color;
+    bottom: 50%;
+  }
+
+  &:after {
+    @extend %common-styles;
+    width: 40px;
+    height: 8px;
+    bottom: -2px;
+    left: -10px;
+    background-color: #7c7f76;
+    border-top: 3px solid $light-frame-color;
+  }
+}
+
+.door {
+  width: 44px;
+  height: 74px;
+  position: relative;
+  top: 9px;
+  margin: 6px;
+  background-color: $light-frame-color;
+  border: 6px solid $dark-frame-color;
+
+  &:before {
+    @extend %common-styles;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: $dark-frame-color;
+    top: 50%;
+    right: 4px;
+  }
+
+  &:after {
+    @extend %common-styles;
+    width: 52px;
+    height: 12px;
+    bottom: -15px;
+    left: -10px;
+    background-color: $light-frame-color;
+    border-bottom: 4px solid $dark-frame-color;
+    border-top: 4px solid $dark-frame-color;
+  }
+}

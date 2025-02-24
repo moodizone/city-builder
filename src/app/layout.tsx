@@ -15,7 +15,11 @@ export const metadata: Metadata = {
 const houses: HouseType[] = [...new Array(10)].map((_, i) => ({
   id: generateUniqueId(),
   name: `House ${i}`,
-  floors: [getRandomColor()],
+  floors: [
+    { color: getRandomColor(), room: 2 },
+    { color: getRandomColor(), room: 3 },
+    { color: getRandomColor(), room: 1 },
+  ],
 }));
 
 export default function RootLayout({
