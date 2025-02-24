@@ -1,5 +1,10 @@
 import * as React from "react";
 
+/**
+ * execute whenever user clicks outside or reference node
+ * @param ref 
+ * @param handler 
+ */
 function useClickOutside(
   ref: React.RefObject<HTMLElement | null>,
   handler: (event: MouseEvent | TouchEvent) => void
