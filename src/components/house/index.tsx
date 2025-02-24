@@ -5,7 +5,7 @@ import Door from "./door";
 import styles from "./styles.module.scss";
 
 export interface FloorType {
-  room: number;
+  rooms: number;
   color: string;
 }
 
@@ -24,7 +24,7 @@ function House({ floors }: HouseType) {
           return (
             <div key={index} className="flex items-center justify-around p-3">
               {isLastRow ? <Door /> : null}
-              {[...new Array(floor.room)].map((_, i) => (
+              {[...new Array(floor.rooms)].map((_, i) => (
                 <Window key={i} />
               ))}
             </div>

@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import Sidebar from "@/components/sidebar";
 import Content from "@/components/content";
 import "./../styles/globals.scss";
-import { HouseType } from "@/components/house";
+import { FloorType, HouseType } from "@/components/house";
 import { generateUniqueId, getRandomColor } from "@/utils/random";
 import { HouseProvider } from "@/hoc/houseProvider";
 
@@ -12,15 +12,21 @@ export const metadata: Metadata = {
   description: "Allows users to dynamically construct and customize houses",
 };
 
-const houses: HouseType[] = [...new Array(10)].map((_, i) => ({
-  id: generateUniqueId(),
-  name: `House ${i}`,
-  floors: [
-    { color: getRandomColor(), room: 2 },
-    { color: getRandomColor(), room: 3 },
-    { color: getRandomColor(), room: 1 },
-  ],
-}));
+const houses: HouseType[] = [...new Array(10)].map((_, i) => {
+  const floorNumbers = Math.floor(Math.random() * 6) + 1;
+  const floors: FloorType[] = [...new Array(floorNumbers)].map(() => {
+    const rooms = Math.floor(Math.random() * 3) + 1;
+    return {
+      color: getRandomColor(),
+      rooms,
+    };
+  });
+  return {
+    id: generateUniqueId(),
+    name: `House ${i}`,
+    floors,
+  };
+});
 
 export default function RootLayout({
   children,
