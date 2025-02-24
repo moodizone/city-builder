@@ -5,7 +5,7 @@ import classNames from "classnames";
 
 import styles from "./styles.module.scss";
 import { useHouse } from "@/hoc/houseProvider";
-import Item from "@/components/sidebar/item";
+import Item from "@/components/layout/sidebar/item";
 
 function Sidebar() {
   const { list } = useHouse();

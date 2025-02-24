@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
-import Sidebar from "@/components/sidebar";
-import Content from "@/components/content";
+import Sidebar from "@/components/layout/sidebar";
+import Content from "@/components/layout/content";
 import "./../styles/globals.scss";
 import { FloorType, HouseType } from "@/components/house";
 import { generateUniqueId, getRandomColor } from "@/utils/random";

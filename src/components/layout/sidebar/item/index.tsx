@@ -1,12 +1,12 @@
 import * as React from "react";
 
 import { HouseType } from "@/components/house";
-import Menu from "@/components/sidebar/menu";
+import Menu from "@/components/layout/sidebar/menu";
 import useClickOutside from "@/hooks/useClickOutside";
-import Link from "@/components/sidebar/item/link";
-import Confirm from "@/components/sidebar/item/confirm";
+import Link from "@/components/layout/sidebar/item/link";
+import Confirm from "@/components/layout/sidebar/item/confirm";
 import { useHouse } from "@/hoc/houseProvider";
-import Form from "@/components/sidebar/item/form";
+import Form from "@/components/layout/sidebar/item/form";
 
 interface Props {
   house: HouseType;

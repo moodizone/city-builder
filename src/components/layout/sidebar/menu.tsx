@@ -1,4 +1,5 @@
 import * as React from "react";
+
 import { ModeType } from "./item";
 
 interface Props {
@@ -9,7 +10,7 @@ interface Props {
 function Menu({ modeHandler, duplicateHandler }: Props) {
   return (
     <div
-      className="absolute right-0 w-32 bg-zinc-700 rounded shadow-lg z-10 overflow-hidden"
+      className="absolute right-0 w-32 bg-zinc-700 rounded shadow-sm z-10 overflow-hidden"
       role="menu"
     >
       <button
