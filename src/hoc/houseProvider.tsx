@@ -14,6 +14,7 @@ interface ContextType {
   removeHouse(id: HouseType["id"]): void;
   duplicateHouse(id: HouseType["id"]): void;
   renameHouse(id: HouseType["id"], name: HouseType["name"]): void;
+  updateHouse(id: HouseType["id"], payload: Partial<HouseType>): void;
 }
 
 const initialState: ContextType = {
@@ -28,6 +29,9 @@ const initialState: ContextType = {
     return void 0;
   },
   duplicateHouse() {
+    return void 0;
+  },
+  updateHouse() {
     return void 0;
   },
 };
@@ -79,6 +83,20 @@ function HouseProvider({ children, list }: React.PropsWithChildren<PropsType>) {
     },
     [houses]
   );
+  const updateHouse = React.useCallback(
+    (id: HouseType["id"], payload: Partial<HouseType>) => {
+      const foundedIndex = houses.findIndex((house) => house.id === id);
+
+      if (foundedIndex !== -1) {
+        setHouses((prev) => {
+          const prevList = [...prev];
+          prevList[foundedIndex] = { ...prevList[foundedIndex], ...payload };
+          return prevList;
+        });
+      }
+    },
+    [houses]
+  );
 
   //================================
   // Render
@@ -91,6 +109,7 @@ function HouseProvider({ children, list }: React.PropsWithChildren<PropsType>) {
         removeHouse,
         duplicateHouse,
         renameHouse,
+        updateHouse,
       }}
     >
       {children}

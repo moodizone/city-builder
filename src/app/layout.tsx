@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   description: "Allows users to dynamically construct and customize houses",
 };
 
-const houses: HouseType[] = [...new Array(10)].map((_, i) => {
+const houses: HouseType[] = [...new Array(3)].map((_, i) => {
   const floorNumbers = Math.floor(Math.random() * MAX_FLOOR) + 1;
   const floors: FloorType[] = [...new Array(floorNumbers)].map(() => {
     const rooms = Math.floor(Math.random() * MAX_ROOM) + 1;
