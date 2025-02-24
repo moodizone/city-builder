@@ -6,7 +6,7 @@ interface Props {
 
 function Card({ children, title }: React.PropsWithChildren<Props>) {
   return (
-    <div className="bg-zinc-700 rounded p-4 ring shadow-sm ring-gray-900/5">
+    <div className="bg-zinc-600 rounded p-4 ring shadow-sm ring-gray-900/5">
       {title ? (
         <h3 className="text-white text-lg font-bold tracking-tight mb-3">
           {title}
