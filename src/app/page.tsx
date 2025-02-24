@@ -2,6 +2,7 @@
 import Link from "next/link";
 import House from "@/components/house";
 import { useHouse } from "@/hoc/houseProvider";
+import Card from "@/components/card";
 
 export default function Home() {
   const { list } = useHouse();
@@ -11,7 +12,9 @@ export default function Home() {
         {list.map((house) => (
           <li key={house.id} className="rounded shadow-sm">
             <Link href={`${house.id}`}>
-              <House {...house} />
+              <Card title={house.name}>
+                <House {...house} />
+              </Card>
             </Link>
           </li>
         ))}
