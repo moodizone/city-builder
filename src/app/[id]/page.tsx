@@ -1,7 +1,27 @@
+"use client";
 import * as React from "react";
+import { useParams, useRouter } from "next/navigation";
 
-function page() {
-  return <div>House details goes here !!!</div>;
+import { HouseType } from "@/components/house";
+import { useHouse } from "@/hoc/houseProvider";
+import HouseForm from "@/app/create/form";
+
+function Details() {
+  const router = useRouter();
+  const { id } = useParams<{ id: HouseType["id"] }>();
+  const { list, updateHouse } = useHouse();
+  const submitHandler = (values: HouseType) => {
+    if (id && values.name) {
+      updateHouse(id, values);
+      router.push("/");
+    }
+  };
+  const initialData = list.find((house) => house.id === id);
+  return (
+    <div className="flex flex-nowrap gap-x-3">
+      <HouseForm submitHandler={submitHandler} initialData={initialData} />
+    </div>
+  );
 }
 
-export default page;
+export default Details;
