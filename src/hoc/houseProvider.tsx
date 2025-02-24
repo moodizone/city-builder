@@ -55,7 +55,11 @@ function HouseProvider({ children, list }: React.PropsWithChildren<PropsType>) {
       const house = houses.find((house) => house.id === id);
 
       if (house) {
-        addHouse({ ...house, id: generateUniqueId() });
+        addHouse({
+          ...house,
+          id: generateUniqueId(),
+          name: `${house.name} Copy`,
+        });
       }
     },
     [houses, addHouse]
