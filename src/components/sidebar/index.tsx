@@ -5,7 +5,6 @@ import classNames from "classnames";
 
 import styles from "./styles.module.scss";
 import { useHouse } from "@/hoc/houseProvider";
-import Button from "@/components/button";
 import Item from "@/components/sidebar/item";
 
 function Sidebar() {
@@ -23,7 +22,13 @@ function Sidebar() {
           <Item key={house.id} house={house} />
         ))}
       </ul>
-      <Button>{"New house"}</Button>
+      <Link
+        href={"/create"}
+        className="w-full p-3 text-center rounded transition-colors duration-200
+        bg-blue-800 text-white hover:bg-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-700 ${className}"
+      >
+        {"New house"}
+      </Link>
     </section>
   );
 }
