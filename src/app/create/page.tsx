@@ -16,7 +16,7 @@ function Create() {
     }
   };
   return (
-    <div className="flex flex-nowrap gap-x-3">
+    <div className="flex flex-col md:flex-row md:flex-nowrap gap-4">
       <HouseForm submitHandler={submitHandler} />
     </div>
   );

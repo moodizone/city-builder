@@ -6,9 +6,10 @@ import Card from "@/components/card";
 
 export default function Home() {
   const { list } = useHouse();
+
   return (
     <div>
-      <ul className="flex flex-wrap gap-3">
+      <ul className="flex justify-center sm:justify-start flex-wrap gap-3">
         {list.map((house) => (
           <li key={house.id} className="rounded shadow-sm">
             <Link href={`${house.id}`}>

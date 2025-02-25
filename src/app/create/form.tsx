@@ -55,7 +55,7 @@ function HouseForm({ submitHandler, initialData = {} }: Props) {
   //================================
   return (
     <>
-      <div className="w-1/2">
+      <div className="flex-grow flex-shrink">
         <Card title="New House">
           <form onSubmit={onSubmit}>
             <div className="flex flex-col gap-y-3">
@@ -103,7 +103,7 @@ function HouseForm({ submitHandler, initialData = {} }: Props) {
           </form>
         </Card>
       </div>
-      <div className="w-1/2">
+      <div className="flex-grow flex-shrink">
         <Card title={name}>
           <House floors={floors} />
         </Card>
