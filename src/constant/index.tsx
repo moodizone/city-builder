@@ -6,3 +6,5 @@ export const MAX_ROOM = 4;
 export const FALLBACK_FLOOR = 1;
 export const FALLBACK_ROOM = 2;
 export const FALLBACK_COLOR = colors[0];
+
+export const MOBILE_VIEWPORT_THRESHOLD = 700;

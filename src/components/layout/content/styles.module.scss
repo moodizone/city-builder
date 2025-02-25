@@ -7,4 +7,9 @@
   top: 0;
   height: 100dvh;
   overflow-y: auto;
+  transition: transform 0.3s ease-in-out;
+
+  &.mobile {
+    left: 0;
+  }
 }

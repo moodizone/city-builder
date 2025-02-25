@@ -7,5 +7,10 @@
   width: $sidebar-width;
   height: 100dvh;
   overflow-y: auto;
-  background-color: theme('colors.zinc.900');
+  background-color: theme("colors.zinc.900");
+  transition: transform 0.3s ease-in-out;
+
+  &.mobile {
+    transform: translateX(-100%);
+  }
 }
