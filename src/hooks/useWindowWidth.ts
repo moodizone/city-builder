@@ -1,7 +1,8 @@
+import { isServer } from "@/utils/helpers";
 import * as React from "react";
 
 export function useWindowWidth(debounce = 500): number {
-  const [width, setWidth] = React.useState(window.innerWidth);
+  const [width, setWidth] = React.useState(isServer() ? 0 : window.innerWidth);
 
   // execute on resizing
   React.useEffect(() => {
